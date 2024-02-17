@@ -1,0 +1,30 @@
+int main() {
+    int AG[] = {54, 20, 18, 23, 17 ,29 ,45 ,56 ,13 ,12};
+    int n = sizeof(AG) / sizeof(AG[0]);
+
+    cout << "AG OG: ";
+    for (int i = 0; i < n; i++) {
+        cout << AG[i] << " ";
+    }
+    cout<<endl;
+
+    for (int i = 0; i < n - 1; ++i) {
+        for (int j = 0; j < n - i - 1; ++j) {
+            if (AG[j] > AG[j + 1]) {
+                int tp = AG[j];
+                AG[j] = AG[j+1];
+                AG[j+1] = tp;
+                
+            }
+        }
+    }
+    
+    cout << "AG ordenado: ";
+    for (int i = 0; i < n; i++) {
+        cout << AG[i] << " ";
+    }
+    
+    return 0;
+
+}
+
